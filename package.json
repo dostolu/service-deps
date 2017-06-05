@@ -1,6 +1,6 @@
 {
   "name": "@dostolu/service-deps",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Promise to be resolved when all deps are up and running",
   "scripts": {
     "test": "npm run test:app && npm run test:eslint",
