@@ -24,9 +24,11 @@ const request = (status, code = null, err = [], once = false) => (data, cb) => {
     return;
   }
 
-  if (status === true && err.indexOf(data.url) !== -1) {
+  const url = data.url.replace(/\/status$/i, '');
+
+  if (status === true && err.indexOf(url) !== -1) {
     if (once === true) {
-      delete err[err.indexOf(data.url)];
+      delete err[err.indexOf(url)];
     }
     cb(true, null);
     return;

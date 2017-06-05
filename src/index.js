@@ -15,7 +15,7 @@ const serviceDeps = (services = [], log = null, to = CHECK_TIMEOUT, req = reques
       services.forEach(service => promisePool.push(
         new Promise((res, rej) => {
           req({
-            url: service,
+            url: `${service}/status`,
             json: true,
             headers: {
               accepts: 'application/json'
