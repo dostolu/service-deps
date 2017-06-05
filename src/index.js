@@ -31,12 +31,12 @@ const serviceDeps = (services = [], log = null, to = CHECK_TIMEOUT, req = reques
       ));
       Promise.all(promisePool)
         .then(() => {
-          log && log.info('Service is ready, starting process');
+          log && log.info('Services are ready, starting process');
           resolve();
         })
         .catch(() => {
           log && log.info(
-            `Restaurant service is not ready yet, waiting ${to / 1000} seconds more`
+            `One of the services is not ready yet, waiting ${to / 1000} seconds more`
           );
           setTimeout(check, to);
         });
